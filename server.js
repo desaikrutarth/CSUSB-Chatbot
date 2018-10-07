@@ -152,7 +152,7 @@ server.post('/', (req, res, next) => {
                             break;
                         // Show Courses:
                         case 'AllCourses':
-                            await f.txt(data.sender, 'Here is the coutrse catalog:');
+                            await f.txt(data.sender, 'Here is the course catalog:');
                             let courses = await courseAll(resp.entities.course); 
                             for(let i = 0; i<courses.length; i++) {
                                 if(courses[i].id){
