@@ -133,13 +133,13 @@ server.post('/', (req, res, next) => {
                             await f.txt(data.sender, office);
                             break;
                         case 'Email':
-                            await f.txt(data.sender, 'Let me check...');
+                           // await f.txt(data.sender, 'Let me check...');
                             let cwData2 = await professorApi(mapProfessor.get((resp.entities.professor).toLowerCase()));
                             let email = emailId(cwData2);
                             await f.txt(data.sender, email);
                             break;
                         case 'Phone':
-                            await f.txt(data.sender, 'Let me check...');
+                          //  await f.txt(data.sender, 'Let me check...');
                             let cwData3 = await professorApi(mapProfessor.get((resp.entities.professor).toLowerCase()));
                             let phone = phoneNo(cwData3);
                             await f.txt(data.sender, phone);
@@ -161,7 +161,7 @@ server.post('/', (req, res, next) => {
                             }
                             break;
                         case 'CourseName':
-                            await f.txt(data.sender, 'Let me check...');
+                         //   await f.txt(data.sender, 'Let me check...');
                             let courseData1 = await courseApi(mapCourse.get((resp.entities.course).replace(/\s+/, "").toLowerCase()));
                             let title = courseTitle(courseData1);
                             await f.txt(data.sender, title);
@@ -179,7 +179,7 @@ server.post('/', (req, res, next) => {
                             await f.txt(data.sender, location);
                             break;
                         case 'CourseUnits':
-                            await f.txt(data.sender, 'Let me check...');
+                          //  await f.txt(data.sender, 'Let me check...');
                             let courseData4 = await courseApi(mapCourse.get((resp.entities.course).replace(/\s+/, "").toLowerCase()));
                             let units = courseUnits(courseData4);
                             await f.txt(data.sender, units);
