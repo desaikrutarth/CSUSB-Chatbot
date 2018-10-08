@@ -127,19 +127,19 @@ server.post('/', (req, res, next) => {
                             }
                             break;
                         case 'OfficeHours':
-                         //   await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let cwData1 = await professorApi(mapProfessor.get((resp.entities.professor).toLowerCase()));
                             let office = officeHr(cwData1);
                             await f.txt(data.sender, office);
                             break;
                         case 'Email':
-                         //   await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let cwData2 = await professorApi(mapProfessor.get((resp.entities.professor).toLowerCase()));
                             let email = emailId(cwData2);
                             await f.txt(data.sender, email);
                             break;
                         case 'Phone':
-                         //   await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let cwData3 = await professorApi(mapProfessor.get((resp.entities.professor).toLowerCase()));
                             let phone = phoneNo(cwData3);
                             await f.txt(data.sender, phone);
@@ -161,13 +161,13 @@ server.post('/', (req, res, next) => {
                             }
                             break;
                         case 'CourseName':
-                         //   await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let courseData1 = await courseApi(mapCourse.get((resp.entities.course).replace(/\s+/, "").toLowerCase()));
                             let title = courseTitle(courseData1);
                             await f.txt(data.sender, title);
                             break;
                         case 'CourseTime':
-                         //   await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let courseData2 = await courseApi(mapCourse.get((resp.entities.course).replace(/\s+/, "").toLowerCase()));
                             let time = courseTime(courseData2);
                             await f.txt(data.sender, time);
@@ -179,7 +179,7 @@ server.post('/', (req, res, next) => {
                             await f.txt(data.sender, location);
                             break;
                         case 'CourseUnits':
-                          //  await f.txt(data.sender, 'Let me check...');
+                            await f.txt(data.sender, 'Let me check...');
                             let courseData4 = await courseApi(mapCourse.get((resp.entities.course).replace(/\s+/, "").toLowerCase()));
                             let units = courseUnits(courseData4);
                             await f.txt(data.sender, units);
@@ -190,8 +190,14 @@ server.post('/', (req, res, next) => {
                             let course = courseByProfessor(courseData5);
                             await f.txt(data.sender, course);
                             break;
+                        case 'Help':
+                            await f.txt(data.sender,"This is the personal assistant bot for CSUSB. This bot serves you informations about courses and professors of Computer Science and Engineering department only. Please type 'sample questions' for more idea.");
+                            break;
+                        case 'SampleQuestions':
+                            await f.txt(data.sender,"You may ask 'Who is the instructor of cse 202?'  'May I know office hours of Dr. Yu?'  You may ask questions about professors(by last name) to check their office hours, email, phone, office location. You may ask questions about computer science courses to check course title, class location, class/lab hours or timing, no. of units and course instructor. You may type 'faculty list' or 'course catalog' to get more details about faculties and courses.");
+                            break; 
                         default: {
-                            await f.txt(data.sender, "I don't know what you mean :(");
+                            await f.txt(data.sender, "I don't know what you mean. Type 'help' for more help.");
                         }
                     }
                 });

@@ -29,13 +29,16 @@ const patternDict = [{
     pattern: '(time?i?n?g?|duration|hours?|lab hours?|lab time?i?n?g?|class hours?)\\sof\\s\\b(?<course>.+)',
     intent: 'CourseTime'
 },{
-    pattern: '(location|room number|room no.?|lab number|class number|class location)\\sof\\s\\b(?<course>.+)',
+    pattern: '(location|room number|room no.?|lab ?n?u?m?b?e?r?|class ?n?u?m?b?e?r?|class location)\\sof\\s\\b(?<course>.+)',
     intent: 'ClassLocation'
 },{
     pattern: '(units?|credits?)\\s(of|have|has)\\s\\b(?<course>.+)',
     intent: 'CourseUnits'
 },{
-    pattern: '(teache?s?i?n?g?|instructor|faculty|professor)\\so?f?\\s?\\b(?<course>.+)',
+    pattern: '(instructor|faculty|professor|teacher)\\sof\\s\\b(?<course>.+)',
+    intent: 'CourseByProfessor'
+},{
+    pattern: '(teache?s?i?n?g?)\\s\\b(?<course>.+)',
     intent: 'CourseByProfessor'
 },{
     pattern : '\\b(bye|exit)\\b',
@@ -49,6 +52,12 @@ const patternDict = [{
 },{
     pattern: '\\b(?<course>.+)\\scatalogo?u?e?',
     intent: 'AllCourses'
+},{
+    pattern: '\\b(help|menu|info)\\b',
+    intent: 'Help'
+},{
+    pattern: '\\b(sample questions?)\\b',
+    intent: 'SampleQuestions'
 }
 ];
 
