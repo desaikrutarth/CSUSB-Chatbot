@@ -191,13 +191,13 @@ server.post('/', (req, res, next) => {
                             await f.txt(data.sender, course);
                             break;
                         case 'Help':
-                            await f.txt(data.sender,"This is the personal assistant bot for CSUSB. This bot serves you informations about courses and professors of Computer Science and Engineering department only. Please type 'sample questions' for more idea.");
+                            await f.txt(data.sender,`This is the personal assistant bot for CSUSB. This bot serves you informations about courses and professors of Computer Science and Engineering department only. Please type "Sample Questions" for more idea.`);
                             break;
                         case 'SampleQuestions':
-                            await f.txt(data.sender,"You may ask 'Who is the instructor of cse 202?'  'May I know office hours of Dr. Yu?'  You may ask questions about professors(by last name) to check their office hours, email, phone, office location. You may ask questions about computer science courses to check course title, class location, class/lab hours or timing, no. of units and course instructor. You may type 'faculty list' or 'course catalog' to get more details about faculties and courses.");
+                            await f.txt(data.sender,`You may ask "Who is the instructor of cse 202?"  "May I know office hours of Dr. Yu?"  You may ask questions about professors(by last name) to check their office hours, email, phone, office location. You may ask questions about computer science courses to check course title, class location, class/lab hours or timing, no. of units and course instructor. You may type "Faculty List" or "Course Catalog" to get more details about faculties and courses.`);
                             break; 
                         default: {
-                            await f.txt(data.sender, "I don't know what you mean. Type 'help' for more help.");
+                            await f.txt(data.sender, `I don't know what do you mean. Type "Help" for more help.`);
                         }
                     }
                 });
