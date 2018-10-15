@@ -58,6 +58,9 @@ const patternDict = [{
 },{
     pattern: '\\b(sample questions?)\\b',
     intent: 'SampleQuestions'
+},{
+    pattern : '\\b(?<lastgreeting>bye|see you)\\b',
+    intent : 'Bye'
 }
 ];
 
