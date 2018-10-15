@@ -196,8 +196,8 @@ server.post('/', (req, res, next) => {
                         case 'SampleQuestions':
                             await f.txt(data.sender,`You may ask "Who is the instructor of cse 202?"  "May I know office hours of Dr. Yu?"  You may ask questions about professors(by last name) to check their office hours, email, phone, office location. You may ask questions about computer science courses to check course title, class location, class/lab hours or timing, no. of units and course instructor. You may type "Faculty List" or "Course Catalog" to get more details about faculties and courses.`);
                             break; 
-                        case 'Bye':
-                            await f.txt(data.sender, `${resp.entities.lastgreeting} Krutarth!`);
+                        case 'Exit':
+                            await f.txt(data.sender, `${resp.entities.greeting} Krutarth!`);
                             await f.txt(data.sender, `Have a great day :)`);
                             break; 
                         default: {

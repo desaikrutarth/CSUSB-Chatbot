@@ -41,9 +41,6 @@ const patternDict = [{
     pattern: '(teache?s?i?n?g?)\\s\\b(?<course>.+)\\b',
     intent: 'CourseByProfessor'
 },{
-    pattern : '\\b(bye|exit)\\b',
-    intent : 'Exit'
-},{
     pattern: '(list of ?a?l?l?|all|all the|catalogu?e? of)\\s\\b(?<course>.+)\\b',
     intent: 'AllCourses'
 },{
@@ -59,8 +56,8 @@ const patternDict = [{
     pattern: '\\b(sample questions?)\\b',
     intent: 'SampleQuestions'
 },{
-    pattern : '\\b(?<lastgreeting>bye|see you)\\b',
-    intent : 'Bye'
+    pattern : '\\b(?<greeting>bye|see you)',
+    intent : 'Exit'
 }
 ];
 

@@ -97,7 +97,11 @@ rl.on('line', reply => {
         switch(data.intent){
             //Greetings
             case 'Hello':
-                console.log(`${data.entities.greeting} there! How can I help you?`);
+                console.log(`${data.entities.greeting} Krutarth! How can I help you?`);
+                rl.prompt();
+                break;
+            case 'Greetings':
+                console.log(`I am doing great! How can I help you today?`);
                 rl.prompt();
                 break;
             //Show Weather
@@ -260,8 +264,9 @@ rl.on('line', reply => {
                     rl.prompt();
                     break; 
             case 'Exit':
-                console.log("Have a great day!");
-                process.exit(0);
+                console.log(`${data.entities.greeting} Krutarth`);
+                console.log("Have a great day :)");
+                rl.prompt();
                 break;
             default: {
                 console.log(`I don't know what do you mean. Type "Help" for more help.`);
