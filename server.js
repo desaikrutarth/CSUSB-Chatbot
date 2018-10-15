@@ -105,7 +105,7 @@ server.post('/', (req, res, next) => {
                 matcher(data.content, async resp => {
                     switch(resp.intent){
                         case 'Hello':
-                            await f.txt(data.sender, `${resp.entities.greeting} there! How can I help you?`);
+                            await f.txt(data.sender, `${resp.entities.greeting} Krutarth! How can I help you?`);
                             break;
                         case 'Greetings':
                             await f.txt(data.sender, 'I am doing great! How can I help you today?');
